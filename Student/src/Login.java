@@ -56,6 +56,7 @@ public class Login extends JFrame {
         logButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event) {
+
                 login();
             }
         });
@@ -113,10 +114,10 @@ public class Login extends JFrame {
             }
 
             // Handle unsuccessful login
-            System.out.println("Invalid login credentials");
+            JOptionPane.showMessageDialog(this, "Incorrect username or password " , "Error.", JOptionPane.ERROR_MESSAGE);
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            JOptionPane.showMessageDialog(this,"You are not connected" , "Error.", JOptionPane.ERROR_MESSAGE);
         } finally {
             // Close the connection in a final block
 
@@ -132,11 +133,10 @@ public class Login extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
+
+
                 new Login();
             }
-        });
-    }
-}
+        }
+
+

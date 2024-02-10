@@ -9,6 +9,7 @@ public class Dashboard extends JFrame {
     Button b1, b2, b3;
 
     public Dashboard(String studentName, String regNo, String id,String Dep,String Coll,String Camp) {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 600);
         setLayout(null);
         setVisible(true);
@@ -66,10 +67,11 @@ public class Dashboard extends JFrame {
 
         // ActionListener for logout button
         b1.addActionListener(new ActionListener() {
-            @Override
+           // @Override
             public void actionPerformed(ActionEvent e) {
                 // Implement logout functionality here
-                dispose(); // Close the Dashboard window on logout
+                dispose();
+               new  Login(); // Close the Dashboard window on logout
             }
         });
     }

@@ -8,6 +8,7 @@ public class signup extends JFrame {
     private JPasswordField pinField, reEnterPinField;
     JButton submitButton;
 
+    // create interface
     public signup() {
         setTitle("Student Registration");
         setSize(400, 500);
@@ -69,13 +70,15 @@ public class signup extends JFrame {
         submitButton.setBackground(Color.blue);
         submitButton.setForeground(Color.LIGHT_GRAY);
 
+        //when submit button clicked it call insert data
         submitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+
                 insertData();
             }
         });
 
-        // Add Components to JLabel
+        // make component visible to JLabel
         add(firstNameLabel);
         add(firstNameField);
         add(lastNameLabel);
@@ -100,6 +103,7 @@ public class signup extends JFrame {
         setVisible(true);
     }
 
+    //function which  insert data into database
     private void insertData() {
         // Get Text Field Values
         String firstName = firstNameField.getText();
@@ -117,12 +121,12 @@ public class signup extends JFrame {
             JOptionPane.showMessageDialog(this, "Fill in all field!", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
+         //check if both password are the same
         if (!pin.equals(reEnterPin)) {
             JOptionPane.showMessageDialog(this, "Password do not match!", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
+             //insert data into database
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/student", "root", "");
             String query = "INSERT INTO student (firstname, lastname, regno, Nationalid, Campus, Department, College, Pin) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -139,16 +143,21 @@ public class signup extends JFrame {
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 JOptionPane.showMessageDialog(this, "You Now Registered!");
+                dispose();
+                new Login();
             } else {
                 JOptionPane.showMessageDialog(this, "Failed to Register.", "Error", JOptionPane.ERROR_MESSAGE);
+
             }
             conn.close();
+            //if data not sent display this message
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage(), "Error.", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "check your input type or connect database" , "Error.", JOptionPane.ERROR_MESSAGE);
         }
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new signup());
+
+         new signup();
     }
 }
