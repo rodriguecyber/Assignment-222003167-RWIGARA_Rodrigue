@@ -4,8 +4,8 @@ import java.awt.event.*;
 import java.sql.*;
 
 public class signup extends JFrame {
-    private JTextField firstNameField, lastNameField, regNoField, nationalIdField, campusField, departmentField, collegeField;
-    private JPasswordField pinField, reEnterPinField;
+    private final JTextField firstNameField, lastNameField, regNoField, nationalIdField, campusField, departmentField, collegeField;
+    private final JPasswordField pinField, reEnterPinField;
     JButton submitButton;
 
     // create interface
@@ -14,6 +14,7 @@ public class signup extends JFrame {
         setSize(400, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
+        setLocationRelativeTo(null);
 
          JLabel head=new JLabel("FILL THE FORM TO REGISTER");
          head.setForeground(Color.blue);

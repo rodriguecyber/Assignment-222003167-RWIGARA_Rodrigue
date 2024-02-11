@@ -18,13 +18,14 @@ public class Login extends JFrame {
 
     JTextField regTextField;
     JPasswordField pwField;
-    JButton logButton;
+    JButton logButton,signupButton;
 
     public Login() {
         setSize(400, 200);
         setTitle("Login Form");
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
 
         // Create and customize JLabels
         JLabel regLabel = new JLabel("Enter Your RegNo:");
@@ -35,6 +36,10 @@ public class Login extends JFrame {
         customizeLabel(pwLabel);
         add(regLabel);
         add(pwLabel);
+        JLabel create=new JLabel("OR ");
+        create.setBounds(180,110,50,50);
+        add(create);
+        customizeLabel(create);
 
         // Create and customize text fields
         regTextField = new JTextField();
@@ -46,11 +51,16 @@ public class Login extends JFrame {
         add(regTextField);
         add(pwField);
 
-        // Create and customize login button
+        // Create and customize  buttons
         logButton = new JButton("Login");
-        logButton.setBounds(150, 120, 80, 30);
+        logButton.setBounds(50, 120, 80, 30);
+
         customizeButton(logButton);
         add(logButton);
+        signupButton = new JButton(" Register");
+        signupButton.setBounds(250,120,100,30);
+        customizeButton(signupButton);
+        add(signupButton);
 
         // Add action listener to the login button
         logButton.addActionListener(new ActionListener() {
@@ -58,6 +68,12 @@ public class Login extends JFrame {
             public void actionPerformed(ActionEvent event) {
 
                 login();
+            }
+        });
+        signupButton.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                new signup();
+                dispose();
             }
         });
 

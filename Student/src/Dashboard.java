@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 public class Dashboard extends JFrame {
     TextField Name1, College, RegNo, IdNo, Campus, Depart;
     Label name1, college, idno, campus, depart, regno,head;
-    Button b1, b2, b3;
+    Button b1;
 
     public Dashboard(String studentName, String regNo, String id,String Dep,String Coll,String Camp) {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -14,6 +14,7 @@ public class Dashboard extends JFrame {
         setLayout(null);
         setVisible(true);
         setTitle("  HOME");
+        setLocationRelativeTo(null);
 
         name1 = new Label("Student Names:");
         idno = new Label("National Identity:");
