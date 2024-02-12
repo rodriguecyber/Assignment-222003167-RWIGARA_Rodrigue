@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Dashboard extends JFrame {
-    TextField Name1, College, RegNo, IdNo, Campus, Depart;
-    Label name1, college, idno, campus, depart, regno,head;
+    //TextField ;
+    Label name1, college, idno, campus, depart, regno,head,Name1, College, RegNo, IdNo, Campus, Depart;
     Button b1;
 
     public Dashboard(String studentName, String regNo, String id,String Dep,String Coll,String Camp) {
@@ -17,7 +17,7 @@ public class Dashboard extends JFrame {
         setLocationRelativeTo(null);
 
         name1 = new Label("Student Names:");
-        idno = new Label("National Identity:");
+        idno = new Label("National ID:");
         college = new Label("College:");
         campus = new Label("Campus:");
         depart = new Label("Department:");
@@ -32,12 +32,12 @@ public class Dashboard extends JFrame {
         add(regno);
         add(head);
 
-        Name1 = new TextField(" "+studentName);
-        College = new TextField(" "+Coll);
-        IdNo = new TextField(" "+id);
-        RegNo = new TextField(" "+regNo);
-        Campus = new TextField(" "+Camp);
-        Depart = new TextField(" "+Dep);
+        Name1 = new Label(" "+studentName);
+        College = new Label(" "+Coll);
+        IdNo = new Label(" "+id);
+        RegNo = new Label(" "+regNo);
+        Campus = new Label(" "+Camp);
+        Depart = new Label(" "+Dep);
 
         add(Name1);
         add(College);
@@ -48,11 +48,17 @@ public class Dashboard extends JFrame {
 
         head.setBounds(60,40,180,30);
         name1.setBounds(30, 105, 90, 30);
+        name1.setForeground(Color.BLUE);
         college.setBounds(30, 145, 80, 30);
+        college.setForeground(Color.BLUE);
         idno.setBounds(30, 185, 100, 30);
+        idno.setForeground(Color.BLUE);
         regno.setBounds(30, 225, 80, 30);
+        regno.setForeground(Color.BLUE);
         campus.setBounds(30, 265, 80, 30);
+        campus.setForeground(Color.BLUE);
         depart.setBounds(30, 305, 80, 30);
+        depart.setForeground(Color.BLUE);
 
         Name1.setBounds(160, 105, 150, 30);
         College.setBounds(160, 145, 150, 30);

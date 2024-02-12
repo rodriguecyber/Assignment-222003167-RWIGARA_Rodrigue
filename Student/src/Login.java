@@ -21,7 +21,7 @@ public class Login extends JFrame {
     JButton logButton,signupButton;
 
     public Login() {
-        setSize(400, 200);
+        setSize(280, 450);
         setTitle("Login Form");
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -30,35 +30,43 @@ public class Login extends JFrame {
         // Create and customize JLabels
         JLabel regLabel = new JLabel("Enter Your RegNo:");
         JLabel pwLabel = new JLabel("Enter Your Password:");
-        regLabel.setBounds(30, 40, 120, 30);
-        pwLabel.setBounds(30, 80, 150, 30);
+        regLabel.setBounds(50, 130, 160, 30);
+        pwLabel.setBounds(50, 210, 160, 30);
         customizeLabel(regLabel);
         customizeLabel(pwLabel);
         add(regLabel);
         add(pwLabel);
         JLabel create=new JLabel("OR ");
-        create.setBounds(180,110,50,50);
+        create.setBounds(100,310,50,50);
         add(create);
         customizeLabel(create);
 
         // Create and customize text fields
         regTextField = new JTextField();
         pwField = new JPasswordField();
-        regTextField.setBounds(200, 40, 120, 30);
-        pwField.setBounds(200, 80, 120, 30);
+        regTextField.setBounds(40, 170, 160, 30);
+        pwField.setBounds(40, 250, 160, 30);
         customizeTextField(regTextField);
         customizeTextField(pwField);
         add(regTextField);
         add(pwField);
+        JLabel title = new JLabel("WELCOME BACK");
+        title.setBackground(Color.blue);
+        title.setBounds(60,20,150,30);
+        add(title);
+        JLabel subt = new JLabel("fill form bellow to access your account");
+        //subt.text
+        subt.setBounds(15,40,250,50);
+        add(subt);
 
         // Create and customize  buttons
         logButton = new JButton("Login");
-        logButton.setBounds(50, 120, 80, 30);
+        logButton.setBounds(40, 290, 160, 30);
 
         customizeButton(logButton);
         add(logButton);
         signupButton = new JButton(" Register");
-        signupButton.setBounds(250,120,100,30);
+        signupButton.setBounds(40,350,160,30);
         customizeButton(signupButton);
         add(signupButton);
 
